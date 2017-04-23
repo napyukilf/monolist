@@ -1,0 +1,6 @@
+<% flash.each do |message_type, message| %>
+<%# controllerから受け渡されたflashの処理{sucsses 'コメント'}の形式%>
+  <div class="alert alert-<% message_type %>"<%= message %></div>
+  <%# bootstrapでのアラート表示[message_type]に[sucsses,danger,info,warning]のどれか[message]にコメントが入る　%>
+  
+  <% end %>
