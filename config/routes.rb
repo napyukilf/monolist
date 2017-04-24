@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
   root to: 'toppages#index'
   
+  get 'login', to: 'sessions#new'
+  #Readの要求
+  post 'login' ,to: 'sessions#create'
+  #Createの操作アクション
+  delete 'logout', to: 'sessions#destroy'
+  #deleteの操作アクション
+  #CRUDに対応するHTTPリクエストのメソッド
+  
   get 'signup', to: 'users#new'
   #新規登録のURLをusers/newではなく,signup/newという風にしたいので、個別に設定
   #rails routesで確認すると、Preixにsignupとあるので、sign_pathでURL生成可能。
