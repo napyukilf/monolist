@@ -15,5 +15,6 @@ Rails.application.routes.draw do
   #users/newでも新規登録のページは出せる。
   resources :users, only: [:show, :new, :create]
   #controllerで実装するものが限られる場合は、個別にしてしておく。
+  resources :items,only: [:new]
 end
 

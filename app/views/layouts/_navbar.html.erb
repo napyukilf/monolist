@@ -17,7 +17,7 @@
       
       <% if logged_in? %>
         <li>
-          <a href="#">
+          <%= link_to new_item_path do %>
             <span class="gltphicon gluyphicon-plus" aria-hidden="true"></span>
             アイテムを追加
             </a>
@@ -42,7 +42,7 @@
       <% else %>      
         <li><%= link_to '新規登録' , signup_path %></li>
         <li><%= link_to 'ログイン' , login_path %></li>
-        <li><%= link_to 'ログアウト', logout_path, mehod: :delete %></li>
+        <li><%= link_to 'ログアウト', logout_path, method: :delete %></li>
       <% end %>
       </ul>
       </div>
