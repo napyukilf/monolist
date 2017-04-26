@@ -9,8 +9,27 @@ class User < ApplicationRecord
   #メールアドレスカラムのバリデーション
   #uniquenessは重複は不可の宣言ソース
  
- 
   has_secure_password
   #usersテーブルにパスワードを保存するとき、パスワードを暗号化して保存する。
   #その際、password_digestカラムが必ず必要となる。
+  
+  has_many :ownerships
+  has_many :items, through: :ownerships
+  
+  has_many :wants
+  has_many :want_items, through: :wants, class_name: 'Item', source: :item
+  
+  
+  def want(item)
+   self.wants.find_or_create_by(item_id: item.id)
+  end
+   
+  def unwant(item)
+   want = self.wants_by(item_id: item.id)
+   want.destroy if want
+  end
+  
+  def want?(item)
+   self.want_items.include?(item)
+  end   
 end
