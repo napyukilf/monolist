@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   #ApplicationContorollerにメソッドを定義するとすべてのControllerで定義したメソッドがしようできる。
   #すべてのControllerがApplicationControllerを継承しているため。
-  protect_form_forgery with::exception
+  protect_from_forgery with: :exception
 
   include SessionsHelper
   

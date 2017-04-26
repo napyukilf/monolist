@@ -5,11 +5,11 @@
         <div class="col-md-3 col-sm-4 col-xs-12">
           <div class="panel panel-default">
             <div class="panel-heading text-center">
-              <img src="<% item.image_url %>" alt="">
+              <img src="<%= item.image_url %>" alt="" >
             </div>
             <div class="panel-body">
-              <% if item.presisted? %>
-                <p class="item-title"><%= item.name %></p>
+              <% if item.persisted? %>
+                <p class="item-title"><%= link_to item.name, item %></p>
               <% else %>
                 <p class="item-title"><%= item.name %></p>
               <% end %>
