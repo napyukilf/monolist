@@ -25,7 +25,7 @@ class User < ApplicationRecord
   end
    
   def unwant(item)
-   want = self.wants_by(item_id: item.id)
+   want = self.wants.find_by(item_id: item.id)
    want.destroy if want
   end
   

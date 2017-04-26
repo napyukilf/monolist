@@ -14,7 +14,7 @@ class ItemsController < ApplicationController
       results.each do |result|
         item = Item.find_or_initialize_by(read(result))
         #分かり易いようにItemとしてインスタンスを作成する。(保存はしていない)
-        @item << item
+        @items << item
         #itemを[]配列に追加している。
       end
     end

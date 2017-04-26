@@ -10,7 +10,7 @@
       <li>
         <div class="status-label">WANT</div>
         <div id="want_count" class="status-value">
-          <%= count_want %>
+          <%= @count_want %>
         </div>
       </li>
       <li>
@@ -23,5 +23,5 @@
   </div>
 </div>
 
-<%= render 'items/items', item: @item %>
+<%= render 'items/items', items: @items %>
       

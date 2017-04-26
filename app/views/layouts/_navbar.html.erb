@@ -20,16 +20,16 @@
           <%= link_to new_item_path do %>
             <span class="gltphicon gluyphicon-plus" aria-hidden="true"></span>
             アイテムを追加
-            </a>
+          <% end %>
         </li>
       
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-gaspopup="true" aria-expanded="false">
         <span class="gravatar">
-          <img src="<%= gravatar_url(current_uesr, size: 20) %>" alt="" class="img-circle">
+          <img src="<%= gravatar_url(current_user, size: 20) %>" alt="" class="img-circle">
         </span>
         
-        <% current_user.name %>
+        <%= current_user.name %>
           <span class="caret"></span>
         </a>
         <ul class="dropdown-menu">
@@ -37,12 +37,15 @@
             <%= link_to 'マイページ', user_path(current_user) %>
           </li>
           <li role="separator" class="divider"></li>
+          <li>
+            <%= link_to 'ログアウト', logout_path, method: :delete %>
+          </li>
         </ul>
       </li>
       <% else %>      
         <li><%= link_to '新規登録' , signup_path %></li>
         <li><%= link_to 'ログイン' , login_path %></li>
-        <li><%= link_to 'ログアウト', logout_path, method: :delete %></li>
+
       <% end %>
       </ul>
       </div>
