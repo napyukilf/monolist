@@ -17,5 +17,6 @@ Rails.application.routes.draw do
   #controllerで実装するものが限られる場合は、個別にしてしておく。
   resources :items,only: [:show, :new]
   resources :ownerships, only: [:create, :destroy]
+  
 end
 
